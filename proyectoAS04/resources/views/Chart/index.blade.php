@@ -8,8 +8,6 @@
     	@section('titulo', 'Informes')
   	</div>
   	@include('common.sessions')
-  	<div class="card card-small py-3 mb-4 d-flex align-items-center">
-  		<div class="row container-fluid">
 			    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 			    <script type="text/javascript">
 
@@ -27,13 +25,18 @@
 			        ]);
 
 			        var options = {
-			          title: 'Cantidad de Proyectos por Universidad'
+				        hAxis: {
+				          title: 'Proyectos por Universidad',
+				          minValue: 0
+				        }
+			          //title: 'Cantidad de Proyectos por Universidad'
 			        };
 
 			        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
 			        chart.draw(data, options);
 			      	}
+
 
 			      	//----------- Grafico 2 -------------------- 
 			      	google.charts.load('current', {packages: ['corechart', 'bar']});
@@ -68,13 +71,89 @@
 
 					      chart.draw(data, options);
 					    }
-
-			    
-			    
+		  	    
 			    </script>
 			  <body>
-			    <div id="piechart" style="width: 900px; height: 500px;"></div>
-			    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+			  	<nav class="nav">
+				  <a class="nav-link" href="#grafico1">Grafico 1</a>
+				  <a class="nav-link" href="#grafico2">Grafico 2</a>
+				  <a class="nav-link" href="#grafico3">Grafico 3</a>
+				  <a class="nav-link" href="#grafico4">Grafico 4</a>
+				  <a class="nav-link" href="#grafico5">Grafico 5</a>
+				  <a class="nav-link" href="#grafico6">Grafico 6</a>
+				</nav>
+			  	<div id="grafico1" class="card card-small mb-4">
+				  	<div class="d-flex justify-content-between">
+					  	<div class="col-12 py-3 mb-4 ">
+					  			<div class="card-header">
+					  				<h4 style="color:#0064FF; font: condensed 160% sans-serif;"><b>Cantidad de Proyectos por Universidad</b></h4>
+					  			</div>
+					  		<div class="row container-fluid d-flex align-items-center">
+								<div id="piechart" style="width: 900px; height: 500px;"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			  	<div id="grafico2" class="card card-small mb-4">
+				  	<div class="d-flex justify-content-center">
+					  	<div class="col-12 py-3 mb-4 ">
+					  			<div class="card-header" style="text-align: center;">
+					  				<h4 style="color:#0064FF; font: condensed 160% sans-serif;"><b>Cantidad de Proyectos en el año 2018 por Universidades</b></h4>
+					  			</div>
+					  		<div class="row container-fluid d-flex align-items-center">
+								    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+							</div>
+						</div>
+				  	</div>
+			  	</div>
+			  	<div id="grafico3" class="card card-small mb-4">
+				  	<div class="d-flex justify-content-center">
+					  	<div class="col-12 py-3 mb-4 ">
+					  			<div class="card-header" style="text-align: center;">
+					  				<h4 style="color:#0064FF; font: condensed 160% sans-serif;"><b>Cantidad de Proyectos en el año 2018 por Universidades</b></h4>
+					  			</div>
+					  		<div class="row container-fluid d-flex align-items-center">
+								    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+							</div>
+						</div>
+				  	</div>
+			  	</div>
+			  	<div id="grafico4" class="card card-small mb-4">
+				  	<div class="d-flex justify-content-center">
+					  	<div class="col-12 py-3 mb-4 ">
+					  			<div class="card-header" style="text-align: center;">
+					  				<h4 style="color:#0064FF; font: condensed 160% sans-serif;"><b>Cantidad de Proyectos en el año 2018 por Universidades</b></h4>
+					  			</div>
+					  		<div class="row container-fluid d-flex align-items-center">
+								    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+							</div>
+						</div>
+				  	</div>
+			  	</div>
+			  	<div id="grafico5" class="card card-small mb-4">
+				  	<div class="d-flex justify-content-center">
+					  	<div class="col-12 py-3 mb-4 ">
+					  			<div class="card-header" style="text-align: center;">
+					  				<h4 style="color:#0064FF; font: condensed 160% sans-serif;"><b>Cantidad de Proyectos en el año 2018 por Universidades</b></h4>
+					  			</div>
+					  		<div class="row container-fluid d-flex align-items-center">
+								    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+							</div>
+						</div>
+				  	</div>
+			  	</div>
+			  	<div id="grafico6" class="card card-small mb-4">
+				  	<div class="d-flex justify-content-center">
+					  	<div class="col-12 py-3 mb-4 ">
+					  			<div class="card-header" style="text-align: center;">
+					  				<h4 style="color:#0064FF; font: condensed 160% sans-serif;"><b>Cantidad de Proyectos en el año 2018 por Universidades</b></h4>
+					  			</div>
+					  		<div class="row container-fluid d-flex align-items-center">
+								    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+							</div>
+						</div>
+				  	</div>
+			  	</div>
 			  </body>
   		</div>
 	</div>
