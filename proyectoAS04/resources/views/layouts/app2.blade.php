@@ -98,6 +98,9 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item nav-link" href="{{ url('admin/users') }}"><i class="far fa-user"></i>    Usuarios</a>
+
+                  <a class="dropdown-item nav-link" href="{{ url('/Excel_Import/excel_importar') }}"><i class="far fa-file-excel"></i>    Importar Usuarios</a>
+
                   <a class="dropdown-item nav-link" href="{{ url('admin/roles') }}"><i class="fas fa-users"></i> Roles</a>
                   <a class="dropdown-item nav-link" href="{{ url('admin/permissions') }}"><i class="fas fa-key"></i> Permisos</a>
                   <a class="dropdown-item nav-link" href="{{ url('admin/activitylogs') }}"><i class="far fa-clipboard"></i> Historial de Actividad</a>

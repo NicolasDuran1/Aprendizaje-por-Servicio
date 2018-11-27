@@ -52,6 +52,14 @@ Route::get('admin', 'Admin\AdminController@index');
 Route::resource('admin/roles', 'Admin\RolesController');
 Route::resource('admin/permissions', 'Admin\PermissionsController');
 Route::resource('admin/users', 'Admin\UsersController');
+
+
+Route::get('Excel_Import/excel_importar', 'Admin\UsersController@importar_excel');
+
+
+Route::post('Excel_Import/cargar_datos_usuario', 'Admin\UsersController@cargar_datos_usuarios');
+
+
 Route::resource('admin/pages', 'Admin\PagesController');
 Route::resource('admin/activitylogs', 'Admin\ActivityLogsController')->only([
     'index', 'show', 'destroy'
@@ -62,3 +70,4 @@ Route::get('admin/users/{id}/edituser', 'Admin\UsersController@edituser');
 Route::resource('admin/settings', 'Admin\SettingsController');
 Route::get('admin/generator', ['uses' => '\Appzcoder\LaravelAdmin\Controllers\ProcessController@getGenerator']);
 Route::post('admin/generator', ['uses' => '\Appzcoder\LaravelAdmin\Controllers\ProcessController@postGenerator']);
+
