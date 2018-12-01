@@ -6,8 +6,8 @@
 <!--   <div class="form-group col-sm-6 col-lg-4"> -->
   <div class="form-group col-sm-6 col-lg-4">
       @section('titulo', 'Lista de Facultades')
-    </div>
-<!--   </div> -->
+  </div>
+<!--   </div> --> 
   @php
     $user = Auth::user();
     $idUser=$user->id;

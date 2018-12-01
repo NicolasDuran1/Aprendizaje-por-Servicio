@@ -1,5 +1,5 @@
 <?php
-
+ 
 namespace App\Http\Controllers;
 
 use App\Universidad;
@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 
-class ChartController extends Controller
+class InformesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,40 +24,33 @@ class ChartController extends Controller
      */
     public function index()
     {
-        // $Proyectos = DB::table('proyectos')
-        //             ->select('id_universidad')
-        //             // ->groupBy('id_universidad')
-        //             ->where('id_universidad','=','1')
-        //             ->count(); 
 
         $proy = DB::table('proyectos')
-                     ->join('universidades','universidades.id','=','proyectos.id_universidad')
-                     ->select(DB::raw('count(*) as proy_count, id_universidad'),'universidades.nombre_universidad as nombre_universidad')
-                     //->where('anio', '>', 2016)
-                     ->groupBy('id_universidad','nombre_universidad')
+                     ->join('universidades','universidades.id','=','proyectos.id_universidad') //Para obtener nombre de la universidad
+                     ->select(DB::raw('count(*) as proy_count'),'universidades.nombre_universidad as nombre_universidad')
+                     ->groupBy('nombre_universidad')
                      ->get();
 
-        // $anio = DB::table('proyectos')
-        //              ->join('universidades','universidades.id','=','proyectos.id_universidad')
-        //              ->select(DB::raw('count(*) as anio_count, anio'),'id_universidad')
-        //              ->where('anio', '>', 2016)
-        //              ->groupBy('id_universidad','anio')
-        //              ->get();
         $anio = DB::table('proyectos')
-                     ->join('universidades','universidades.id','=','proyectos.id_universidad')
-                     ->select(DB::raw('count(*) as anio_count, anio'),'nombre_universidad')
-                     ->where('anio', '=', 2018)
-                     ->groupBy('anio','nombre_universidad')
-                     ->get();
-        //dd($anio);
-        //$pro = DB::table('proyectos')->get();
+                    //->join('universidades','universidades.id','=','proyectos.id_universidad')
+                    ->select(DB::raw('count(*) as anio_count'), 'anio')
+                    ->groupBy('anio')
+                    ->get();
 
-        //$Universidad = Universidad::all();
+        $complejidad = DB::table('proyectos')
+                    ->select(DB::raw('count(*) as count, complejidad'), 'complejidad')
+                    ->groupBy('complejidad')
+                    ->get();
 
-        //dd($proy);
-        //dd($pro);
-        //dd($Universidad);
-        return view('Chart.index', compact('proy','anio'));
+        $universidadAnio = DB::table('proyectos')
+                    ->join('universidades','universidades.id','=','proyectos.id_universidad')
+                    ->select(DB::raw('count(*) as count, anio'), 'universidades.nombre_universidad as nombre_universidad')
+                    ->groupBy('nombre_universidad','anio')
+                    ->orderBy('anio')
+                    ->get();
+
+        return view('Informes.index', compact('proy','anio','complejidad','universidadAnio'));
+
     }
 
     /**

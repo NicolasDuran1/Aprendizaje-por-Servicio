@@ -161,8 +161,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         //Collective
         Collective\Html\HtmlServiceProvider::class,
-        //LARAVEL EXCEL
-        // Maatwebsite\Excel\ExcelServiceProvider::class, 
+        ConsoleTVs\Charts\ChartsServiceProvider::class,
 
     ],
 
@@ -215,10 +214,7 @@ return [
         //Collective
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
-
-        //LARAVEL EXCEL
-        // 'Excel' => Maatwebsite\Excel\Facades\Excel::class,
-
+        'HighCharts' => ConsoleTVs\Charts\Facades\Charts::class,
     ],
 
 ];

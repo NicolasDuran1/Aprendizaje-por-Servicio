@@ -11,7 +11,7 @@
           ->get()
           ->first();
 @endphp 
-    <div class="form-group ">
+    <div class="form-group col-sm-6 col-lg-4">
         @section('titulo', 'Socios Comunitarios')
     </div>
 

@@ -12,10 +12,10 @@
             ->first();
     @endphp 
     <!-- TITULO -->
-    <div class="form-group ">
+    <div class="form-group col-sm-6 col-lg-4 ">
         @section('titulo', 'Universidades')
     </div>
-
+    
     <!-- Llamar a la vista de generadora de mensajes-->
     @include('common.sessions')
 

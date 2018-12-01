@@ -20,14 +20,10 @@
 
 
   <body class="h-100">   <!-- Usar todo el ancho de la pantalla -->
-
     <div class="container-fluid"> <!-- Usar todo el body -->
-
       <div class="row ">           <!-- Generar columnas, sistema de rejillas -->
-
         <!-- Main Sidebar -->
         <aside class="container-fluid main-sidebar col-12 col-md-3 col-lg-2 px-0"> <!-- col-12 col-md-3 col-lg-2 Esto permite que sea responsive -->
-
           <div class="main-navbar">
             <nav class="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0"> <!-- align-items-stretch esto es para usar todo el alto -->
               <a class="navbar-brand w-100 mr-3" href="{{ url('/home') }}" style="line-height: 30px;">  
@@ -88,7 +84,7 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ url('Chart') }}"><i class="fas fa-chart-bar"></i>
+                <a class="nav-link" href="{{ url('Informes') }}"><i class="fas fa-chart-bar"></i>
                         Informes
                 </a>
               </li>
@@ -98,9 +94,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item nav-link" href="{{ url('admin/users') }}"><i class="far fa-user"></i>    Usuarios</a>
-
                   <a class="dropdown-item nav-link" href="{{ url('/Excel_Import/excel_importar') }}"><i class="far fa-file-excel"></i>    Importar Usuarios</a>
-
                   <a class="dropdown-item nav-link" href="{{ url('admin/roles') }}"><i class="fas fa-users"></i> Roles</a>
                   <a class="dropdown-item nav-link" href="{{ url('admin/permissions') }}"><i class="fas fa-key"></i> Permisos</a>
                   <a class="dropdown-item nav-link" href="{{ url('admin/activitylogs') }}"><i class="far fa-clipboard"></i> Historial de Actividad</a>
@@ -133,8 +127,7 @@
               </form>
                 @guest
                 <li class="nav-item">
-                  <a class="nav-link text-nowrap px-3" href="{{ route('login') }}" role="button"><i class="far fa-user"></i> {{ __('Iniciar Sesión') }}</a>
-                  <a class="nav-link text-nowrap px-3" href="{{ route('register') }}" role="button"><i class="fas fa-user-plus"></i> {{ __('Registrarse') }}</a>
+                  <a class="nav-link text-nowrap px-5" href="{{ route('login') }}" role="button"><i class="far fa-user"></i> {{ __('Ingresar') }}</a>
                 </li>
                 @else
                 <li class="nav-item dropdown">
@@ -154,7 +147,7 @@
                     </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
-                    </form>
+                    </form> 
                   </div>
                 </li>
                 @endguest
@@ -169,52 +162,26 @@
 
           <!-- / .main-navbar -->
           <main class="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3">
-            <div class="main-content-container container-fluid px-4" style="background-image: url('{{ asset('images/fondo2.png') }}'); height: 100vh; background-size: cover; background-position: center;}" >
+            <div class="main-content-container container-fluid px-4 " style="background-image: url('{{ asset('images/fondo2.png') }}'); height: 100vh; background-size: cover; background-position: center;}" >
 
                     @yield('content')
                   
               </div>
           </div>
           </main>
-
-          <!--FOOTER-->
-          <!-- <footer class="main-footer d-flex p-1 px-2 bg-white border-top  "> -->
-            {{-- <footer class=" container py-2 d-flex main-footer  p-1 px-2 fixed-bottom bg-white col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3 border-top">
-            <ul class="nav">
-              <li class="nav-item">
-                <a class="nav-link" href="{{ url('/home') }}">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Servicios</a>
-              </li>
-              <li class="nav-item">
-  <a class="nav-link" href="#">About</a>
-</li>
-<li class="nav-item">
-  <a class="nav-link" href="#">Products</a>
-</li>
-<li class="nav-item">
-  <a class="nav-link" href="#">Blog</a>
-</li>
-            </ul>
-            <span class="copyright ml-auto my-auto mr-2">Copyright © 2018
-              <a href="https://designrevision.com" rel="nofollow">UCM</a>
-            </span>
-          </footer> --}}
-        <!-- </main> -->
       </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>-->
     <script src="https://unpkg.com/shards-ui@latest/dist/js/shards.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Sharrre/2.0.1/jquery.sharrre.min.js"></script>
     <script src="{{ asset('scripts/extras.1.1.0.min.js') }}"></script>
     <script src="{{ asset('scripts/shards-dashboards.1.1.0.min.js') }}"></script>
     <script src="{{ asset('scripts/app/app-blog-overview.1.1.0.js') }}"></script>
-    <script src="js/highcharts.js"></script>
+    
     @yield('scripts')
   </body>
 </html>

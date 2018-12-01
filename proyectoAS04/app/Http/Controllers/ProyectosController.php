@@ -259,4 +259,12 @@ class ProyectosController extends Controller
         return redirect()->route('proyecto.index', [$proyecto])-> with('status','Proyecto eliminado correctamente');
     }
 
+    public function mostrar(){
+    $nombresProyectos = DB::table('proyectos')
+        ->join('users','users.id','=','proyectos.id_profesor')
+        ->join('universidades','universidades.id','=','proyectos.id_universidad')
+        ->select('proyectos.id as id','users.nombre as profesor' ,'proyectos.nombre_proyecto as nombre_proyecto','universidades.nombre_universidad as nombre_universidad'/*,'cursos.nombre_curso as nombre_curso'*/)
+        ->paginate(5);
+        return view('proyecto.mostrar', compact('nombresProyectos'));
+    }
 }

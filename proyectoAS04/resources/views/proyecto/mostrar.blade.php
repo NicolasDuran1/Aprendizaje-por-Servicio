@@ -1,31 +1,14 @@
 @extends('layouts.app2')
 
-@section('title', 'Proyectos')
+@section('content')
 
-@section('content') 
-<div class="form-group col-sm-6 col-lg-4">
-  @section('titulo', 'Lista de Proyectos')
-</div>
-  @php
-    $user = Auth::user();
-    $idUser=$user->id;
-    $rol=DB::table('role_user')
-          ->where('user_id', $idUser)
-          ->get()
-          ->first();
-  @endphp 
-  @include('common.sessions')
-  <div class="card card-small py-3 mb-4 d-flex align-items-center">
+  <div class="form-group col-sm-6 col-lg-4">
+	@section('titulo', 'Proyectos asociados a nuestro sistema')
+  </div>
+@include('common.sessions')
+  <div class="card card-small py-3 my-3 mb-4 d-flex align-items-center">
   <div class="row container-fluid">
     <div class="col">
-        <div class="form-group">
-          @if($rol->role_id == 1 | $rol->role_id == 3)
-            <a class="btn btn-primary" class="col-sm-6" href="{{ route('proyecto.create') }}"><i class="fas fa-pencil-alt"></i> Nuevo Proyecto</a>
-          @else
-            <h5>Proyectos asociados a nuestro sistema</h5>
-          @endif
-         </div>
-        
         <div class="form-group">
         {!! Form::open(['method' => 'GET', 'url' => '/proyecto', 'class' => 'form-inline my-2 my-lg-0 float-right', 'role' => 'search'])  !!}
           <div class="input-group">
@@ -48,7 +31,6 @@
                   <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Universidad</th>
                   {{-- <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Curso</th> --}}
                   <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Profesor</th>
-                  <th tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Opciones</th>
                 </tr> 
               </thead>
               <tbody>
@@ -58,13 +40,6 @@
                             <td>{{ $proyecto->nombre_universidad }}</td>
                             {{-- <td>{{ $proyecto->nombre_curso}}</td> --}}
                             <td>{{ $proyecto->profesor}}</td> 
-                              <td>
-                                <a class="col-sm-6" target="_blank" href="/proyecto/{{ $proyecto->id}}"><i class="far fa-eye"></i></a>
-                            @if($rol->role_id == 1 | $rol->role_id == 3)
-                                <a class="col-sm-6" target="_blank" href="/proyecto/{{ $proyecto->id}}/complete"><i class="far fa-edit"></i></a>
-                                <a href="/proyecto/{{ $proyecto->id }}/edit">Editar</a>
-                              </td>
-                            @endif
                   </tr>
               @endforeach
               </tbody>
@@ -76,4 +51,3 @@
     </div>
   </div>
 @endsection
-

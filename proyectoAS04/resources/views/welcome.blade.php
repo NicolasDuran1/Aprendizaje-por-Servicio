@@ -9,10 +9,10 @@
                     <div class="card-body">
                       <h5 class="card-title">Aprendizaje Más Servicio</h5>
                       <p class="card-text">Un servicio a la comunidad</p>
-                      <a href="{{ url('proyecto') }}" class="btn btn-primary">Proyectos</a>
+                      <a href="{{ url('mostrar') }}" class="btn btn-primary">Proyectos</a>
                     </div>
                     <div class="card-footer text-muted">
-                      2018
+                      2018 
                     </div>
               </div>
               <div class="carousel-item rounded">
@@ -20,7 +20,7 @@
                     <div class="card-body">
                       <h5 class="card-title">Aprendizaje Más Servicio</h5>
                       <p class="card-text">Un servicio a la comunidad</p>
-                      <a href="{{ url('proyecto') }}" class="btn btn-primary">Proyectos</a>
+                      <a href="{{ url('mostrar') }}" class="btn btn-primary">Proyectos</a>
                     </div>
                     <div class="card-footer text-muted">
                       2018
@@ -31,7 +31,7 @@
                     <div class="card-body">
                       <h5 class="card-title">Aprendizaje Más Servicio</h5>
                       <p class="card-text">Un servicio a la comunidad</p>
-                      <a href="{{ url('proyecto') }}" class="btn btn-primary">Proyectos</a>
+                      <a href="{{ url('mostrar') }}" class="btn btn-primary">Proyectos</a>
                     </div>
                     <div class="card-footer text-muted">
                       2018
